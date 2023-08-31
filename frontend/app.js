@@ -9,7 +9,7 @@ const dburl = "http://localhost:3000";
 /// Initialize App  ///
 //////////////////////
 async function initApp() {
-  console.log("JS works");
+  console.log("Frontend loaded");
   const artists = await getArtist(dburl);
 
   /////===--- THIS ALSO WORKS, BUT RACE SAYS FOROF IS BETTER FOR THIS ¯\_(ツ)
