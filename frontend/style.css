@@ -1,0 +1,388 @@
+/* ---------- GENERAL STYLING ---------- */
+html {
+  color: white;
+  font-family: var(--font-family);
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.2em;
+  background-color: black;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+h3 {
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+a {
+  cursor: pointer;
+  color: var(--green);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- HEADER STYLING ---------- */
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+header img {
+  height: 250px;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: 0 -3px;
+}
+
+header h1 {
+  position: absolute;
+  left: 60%;
+  font-size: 2em;
+  text-shadow: 3px 3px 3px black;
+}
+
+@media (min-width: 992px) {
+  header h1 {
+    font-size: 3em;
+  }
+}
+@media (min-width: 1500px) {
+  header h1 {
+    font-size: 3em;
+    top: 6%;
+  }
+}
+
+/* ---------- ANIMATIONS ---------- */
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- GRID CONTAINER STYLING ---------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 1em;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1500px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* ---------- GRID ITEM STYLING ---------- */
+
+.grid-item {
+  padding: 1.5em;
+  background-color: #333;
+  transition: 0.5s;
+  animation: fadeIn 0.5s;
+  cursor: pointer;
+  border-radius: 1em;
+  padding: 0;
+}
+
+.grid-item:hover {
+  box-shadow: 0px 5px 10px 0px rgba(242, 245, 240, 0.878);
+}
+
+.grid-item img {
+  width: 70%;
+  margin-top: 1em;
+  margin-left: 12.5%;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+
+.grid-item p {
+  margin: 0.3em;
+  text-align: center;
+}
+
+.grid-item h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.water {
+  box-shadow: 0px 3px 30px 0px rgb(13, 77, 196) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.fire {
+  box-shadow: 0px 3px 30px 0px rgb(255, 0, 0) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.bug {
+  box-shadow: 0px 3px 30px 0px rgb(2, 170, 72) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.fighting {
+  box-shadow: 0px 3px 30px 0px rgb(105, 55, 8) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.normal {
+  box-shadow: 0px 3px 30px 0px rgb(255, 255, 255) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.psychic {
+  box-shadow: 0px 3px 30px 0px rgb(142, 10, 218) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.psychich {
+  box-shadow: 0px 3px 30px 0px rgb(142, 10, 218) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.ghost {
+  box-shadow: 0px 3px 30px 0px rgb(170, 15, 88) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.fairy {
+  box-shadow: 0px 3px 30px 0px rgb(207, 84, 141) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.flying {
+  box-shadow: 0px 3px 30px 0px rgb(49, 158, 231) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.electric {
+  box-shadow: 0px 3px 30px 0px rgb(221, 241, 41) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.ground {
+  box-shadow: 0px 3px 30px 0px rgb(70, 48, 20) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.sun {
+  box-shadow: 0px 3px 30px 0px rgb(212, 191, 0) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.dark {
+  box-shadow: 0px 3px 30px 0px rgb(5, 6, 10) inset;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+/* ---------- GRID CONTAINER BTN STLYING ---------- */
+
+.grid-container .btns {
+  padding: 1em 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.grid-container .btns button {
+  width: 100%;
+}
+
+/* ---------- FORM STYLING ---------- */
+/* input form styling */
+form {
+  margin: 2em auto 0;
+  padding: 1em 1em 2em;
+  text-align: center;
+}
+
+button {
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background-color: black;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  width: 100%;
+  max-width: 380px;
+}
+
+input {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 1em;
+  border: 2px solid rgb(0, 0, 0);
+  display: block;
+  background: white;
+}
+
+/* ---------- DIALOG STYLING ---------- */
+
+form {
+  margin: 0px;
+}
+
+dialog {
+  border-color: rgb(255, 255, 255);
+  background-color: rgb(73, 69, 69);
+  width: 70vw;
+  padding: 0em 0em;
+  color: white;
+  margin-top: 0;
+}
+
+.dialog-grid {
+  display: grid;
+  grid-template-areas: "a b";
+  gap: 5px;
+}
+
+#dialog-img-div {
+  border: 0px outset;
+  grid-area: a;
+}
+
+#dialog-info-div {
+  border: 5px black;
+  grid-area: b;
+}
+
+dialog::backdrop {
+  background: rgb(172, 198, 201, 0.8);
+}
+
+dialog h3 {
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-style: italic;
+}
+
+dialog h2 {
+  text-align: center;
+  border-color: black;
+  border: solid;
+  margin-top: 0;
+}
+
+dialog ul {
+  margin: 0.5em 0 1em;
+  padding-inline-start: 1.5em;
+  font-size: 0.8em;
+}
+dialog p {
+  margin: 0.5em 0 1em;
+  font-size: 0.8em;
+}
+dialog img {
+  margin: 0.5em 0 1em;
+  width: 400px;
+}
