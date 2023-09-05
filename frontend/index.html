@@ -13,21 +13,51 @@
       <h1>MUSAKBRUH</h1>
       <div id="header_img"><img src="img\banner.jpg" /></div>
     </header>
+    <button id="createArtist">Create New</button>
+
+    <dialog id="dialog-createArtist">
+      <form id="createArtistForm">
+        <label for="dialog-name">Name</label>
+        <input id="dialog-name" type="text" name="name"></input>
+        <label for="dialog-image">Image URL</label>
+        <input id="dialog-image" type="text" name="image"></input>
+        <label for="dialog-birthdate">Birth date</label>
+        <input id="dialog-birthdate type="text" name="birthdate"></input>
+        <label for="dialog-activeSince">Active since:</label>
+        <input id="dialog-activeSince" type="text" name="activeSince"></input>
+        <label for="dialog-genres">Genres</label>
+        <input id="dialog-genres" type="text" name="genres"></input>
+        <label for="dialog-labels">Labels</label>
+        <input id="dialog-labels" type="text" name="labels"></input>
+        <label for="dialog-website">Website</label>
+        <input id="dialog-website" type="text" name="website"></input>
+        <label for="dialog-shortDescription">Short Description</label>
+        <input id="dialog-shortDescription" type="text" name="shortDescription"></input>
+        <button id="CreateArtist-btn" class="greenBtn" type="submit">Create</button>
+        <button id="cancelCreate-btn">Close</button>
+      </form>
+    </dialog>
+
     <dialog id="dialog-artist">
-      <h2 id="dialog-name"></h2>
-      <section class="dialog-grid">
-        <div id="dialog-img-div"><img id="dialog-img" src="" /></div>
-        <div id="dialog-info-div">
-          <h3 id="dialog-birthdate"></h3>
-          <p id="dialog-activeSince"></p>
-          <p id="dialog-genres"></p>
-          <p id="dialog-labels"></p>
-          <p id="dialog-website"></p>
-          <p id="dialog-shortDescription"></p>
-        </div>
-      </section>
-      <form method="dialog">
-        <button>Close</button>
+      <form id="editArtistForm">
+        <label for="dialog-name">Name</label>
+        <input id="dialog-name" type="text" name="name"></input>
+        <label for="dialog-image">Image URL</label>
+        <input id="dialog-image" type="text" name="image"></input>
+        <label for="dialog-birthdate">Birth date</label>
+        <input id="dialog-birthdate type="text" name="birthdate"></input>
+        <label for="dialog-activeSince">Active since:</label>
+        <input id="dialog-activeSince" type="text" name="activeSince"></input>
+        <label for="dialog-genres">Genres</label>
+        <input id="dialog-genres" type="text" name="genres"></input>
+        <label for="dialog-labels">Labels</label>
+        <input id="dialog-labels" type="text" name="labels"></input>
+        <label for="dialog-website">Website</label>
+        <input id="dialog-website" type="text" name="website"></input>
+        <label for="dialog-shortDescription">Short Description</label>
+        <input id="dialog-shortDescription" type="text" name="shortDescription"></input>
+        <button id="updateArtist-btn" class="greenBtn" type="submit">Update</button>
+        <button id="cancelEdit-btn">Close</button>
       </form>
     </dialog>
     <section id="artists" class="grid-container"></section>

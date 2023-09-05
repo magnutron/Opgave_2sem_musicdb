@@ -1,0 +1,24 @@
+[
+  {
+    "id": "2332432234",
+    "name": "Tool",
+    "birthdate": "January 2, 1990",
+    "activeSince": "1990",
+    "genres": ["Progressive Metal", "Alternative Metal"],
+    "labels": ["Volcano Entertainment", "Tool Dissectional"],
+    "website": "https://www.toolband.com/",
+    "image": "../img/tool.jpg",
+    "shortDescription": "Tool is a progressive metal band known for their intricate music, philosophical lyrics, and captivating visuals."
+  },
+  {
+    "id": "23336235632234",
+    "name": "Sleep Token",
+    "birthdate": "Unknown",
+    "activeSince": "2015",
+    "genres": ["Progressive Metal", "Rock", "Electronic"],
+    "labels": ["Spinefarm Records", "Church of Sleep"],
+    "website": "https://www.sleep-token.com/",
+    "image": "../img/sleeptoken.jpg",
+    "shortDescription": "Sleep Token is a British musical project known for its enigmatic persona, blending progressive metal, rock, and electronic music."
+  }
+]
