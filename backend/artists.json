@@ -11,14 +11,14 @@
     "shortDescription": "Tool is a progressive metal band known for their intricate music, philosophical lyrics, and captivating visuals."
   },
   {
-    "id": "23336235632234",
     "name": "Sleep Token",
     "birthdate": "Unknown",
     "activeSince": "2015",
-    "genres": ["Progressive Metal", "Rock", "Electronic"],
-    "labels": ["Spinefarm Records", "Church of Sleep"],
+    "genres": "Progressive Metal,Rock,Electronic",
+    "labels": "Spinefarm Records,Church of Sleep",
     "website": "https://www.sleep-token.com/",
-    "image": "../img/sleeptoken.jpg",
-    "shortDescription": "Sleep Token is a British musical project known for its enigmatic persona, blending progressive metal, rock, and electronic music."
+    "image": "https://example.com/sleep-token-image.jpg",
+    "shortDescription": "Sleep Token is a British musical project known for its enigmatic persona, blending progressive metal, rock, and electronic music.",
+    "id": "435345"
   }
 ]

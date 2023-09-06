@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="img/pokeball_32x32.ico" />
+    <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png" />
     <title>PokédexIO</title>
   </head>
   <body>
@@ -13,10 +13,25 @@
       <h1>MUSAKBRUH</h1>
       <div id="header_img"><img src="img\banner.jpg" /></div>
     </header>
-    <button id="createArtist">Create New</button>
+
+    <div id="createArtistDiv"><button id="btn-createArtist">Create New</button></div>
+
+    <div id="filterSort">
+      <div id="sort">
+        <h3>Sort by:</h3>
+        <button id="btn-sortName" type="button">Name</button>
+        <button id="btn-sortActiveSince" type="button">Active Since</button>
+      </div>
+      <div id="filters">
+        <h3>Filter by:</h3>
+        <button id="btn-sortFavorites" type="button">⭐Favorites⭐</button>
+        <button id="btn-sortName" type="button">Name</button>
+        <button id="btn-sortActiveSince" type="button">Active Since</button>
+      </div>
+  </div>
 
     <dialog id="dialog-createArtist">
-      <form id="createArtistForm">
+      <form id="form-createArtist">
         <label for="dialog-name">Name</label>
         <input id="dialog-name" type="text" name="name"></input>
         <label for="dialog-image">Image URL</label>
@@ -33,19 +48,27 @@
         <input id="dialog-website" type="text" name="website"></input>
         <label for="dialog-shortDescription">Short Description</label>
         <input id="dialog-shortDescription" type="text" name="shortDescription"></input>
-        <button id="CreateArtist-btn" class="greenBtn" type="submit">Create</button>
-        <button id="cancelCreate-btn">Close</button>
+        <button id="btn-createArtistSubmit" class="greenBtn" type="submit">Create</button>
+        <button type=button id="btn-createArtistDecline">Close</button>
       </form>
     </dialog>
 
-    <dialog id="dialog-artist">
-      <form id="editArtistForm">
+    <dialog id="dialog-deleteArtist">
+      <form id="form-deleteArtist">
+        <h2>Are you sure?</h2>
+        <button id="btn-deleteConfirm" type="submit">Yes</button>
+        <button id="btn-deleteDecline" type="button">No</button>
+      </form>
+    </dialog>
+
+    <dialog id="dialog-editArtist">
+      <form id="form-editArtist">
         <label for="dialog-name">Name</label>
         <input id="dialog-name" type="text" name="name"></input>
         <label for="dialog-image">Image URL</label>
         <input id="dialog-image" type="text" name="image"></input>
         <label for="dialog-birthdate">Birth date</label>
-        <input id="dialog-birthdate type="text" name="birthdate"></input>
+        <input id="dialog-birthdate" type="text" name="birthdate"></input>
         <label for="dialog-activeSince">Active since:</label>
         <input id="dialog-activeSince" type="text" name="activeSince"></input>
         <label for="dialog-genres">Genres</label>
@@ -56,8 +79,8 @@
         <input id="dialog-website" type="text" name="website"></input>
         <label for="dialog-shortDescription">Short Description</label>
         <input id="dialog-shortDescription" type="text" name="shortDescription"></input>
-        <button id="updateArtist-btn" class="greenBtn" type="submit">Update</button>
-        <button id="cancelEdit-btn">Close</button>
+        <button id="btn-editSubmit" class="greenBtn" type="submit">Update</button>
+        <button id="btn-editCancel"type="button">Close</button>
       </form>
     </dialog>
     <section id="artists" class="grid-container"></section>

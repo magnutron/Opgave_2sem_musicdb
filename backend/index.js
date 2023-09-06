@@ -18,14 +18,12 @@ app.get("/", (request, response) => {
 app.get("/artists", async (request, response) => {
   const data = await fs.readFile("artists.json");
   const artists = JSON.parse(data);
-  console.log(artists);
   response.json(artists);
 });
 
 app.get("/artists/:id", async (request, response) => {
   const data = await fs.readFile("artists.json");
   const artists = JSON.parse(data);
-  console.log(request.params.id);
   response.send(artists.find((artist) => artist.id == request.params.id));
 });
 
@@ -34,8 +32,57 @@ app.post("/artists", async (request, response) => {
   const artists = JSON.parse(data);
   const newArtist = request.body;
   newArtist.id = uuidv4();
+  console.log(newArtist);
   artists.push(newArtist);
   fs.writeFile("artists.json", JSON.stringify(artists));
+  response.json(artists);
+});
+
+app.put("/artists/:id", async (request, response) => {
+  console.log(request.params.id);
+  const data = await fs.readFile("artists.json");
+  const artists = JSON.parse(data);
+  const id = request.params.id;
+  const newData = request.body;
+
+  /// Target object defined as oldData
+  let oldData = artists.find((artist) => artist.id == request.params.id);
+
+  /// Find target object position
+  let oldDataPosition = artists.indexOf(oldData);
+  /// Replace ID of body to match requested ID
+  newData.id = id;
+
+  /// Slice n dice
+  artists.splice(oldDataPosition, 1, newData);
+
+  fs.writeFile("artists.json", JSON.stringify(artists));
+  /// Display new array
+  response.json(artists);
+});
+
+app.delete("/artists/:id", async (request, response) => {
+  console.log(request.params.id);
+  const data = await fs.readFile("artists.json");
+  const artists = JSON.parse(data);
+  const id = request.params.id;
+  const newData = request.body;
+
+  /// Target object defined as oldData
+  let oldData = artists.find((artist) => artist.id == request.params.id);
+  console.log(oldData);
+
+  /// Find target object position
+  let oldDataPosition = artists.indexOf(oldData);
+  /// Replace ID of body to match requested ID
+  newData.id = id;
+
+  /// Slice n dice
+  artists.splice(oldDataPosition, 1);
+  console.log(artists);
+
+  fs.writeFile("artists.json", JSON.stringify(artists));
+  /// Display new array
   response.json(artists);
 });
 
