@@ -6,9 +6,14 @@ window.addEventListener("load", initApp);
 const endpoint = "http://localhost:3000/artists";
 let artists;
 let selectedArtist;
-let favoriteArtists = [];
-let favoritePosition;
+let favoriteArtists;
+let savedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
+if (savedFavorites) {
+  favoriteArtists = savedFavorites;
+} else {
+  favoriteArtists = [];
+}
 ////////////////////////
 /// Initialize App  ///
 //////////////////////
@@ -60,28 +65,50 @@ function listArtist(artist) {
         `
   );
 
-  if (favoriteArtists.find((favoriteArtist) => favoriteArtist == artist)) {
-    //// Apply button class if artist exists in localStorage.. But what about copies? Perhaps if statement for artistFavorited
-    console.log(favoriteArtist);
-  }
-
   document.querySelector("#artists article:last-child .btn-edit").addEventListener("click", () => editArtistDialog(artist));
   document.querySelector("#artists article:last-child .btn-delete").addEventListener("click", () => deleteArtistDialog(artist.id));
-  document.querySelector("#artists article:last-child .btn-favorite").addEventListener("click", () => artistFavorited(artist));
+  document.querySelector("#artists article:last-child .btn-favorite").addEventListener("click", () => artistFavorited(artist, favBtn));
+
+  const favBtn = document.querySelector("#artists article:last-child .btn-favorite");
+  let favoriteString = JSON.stringify(favoriteArtists);
+  if (favoriteString.includes(artist.id)) {
+    favBtn.classList.add("favorited");
+  }
 }
 
-function artistFavorited(artistToFavorite) {
-  /// Target object defined as oldData
-  let oldData = artists.find((artist) => artist.id == artistToFavorite.id);
-  console.log(oldData);
+function artistFavorited(artistToFavorite, favBtn) {
+  let favoritePosition;
 
-  /// Find target object position
-  let favoritePosition = artists.indexOf(oldData);
-  /// Replace ID of body to match requested ID
+  /// Should probably be ID based to avoid issues after edited object.
+  let body = {
+    id: artistToFavorite.id,
+  };
 
-  favoriteArtists.push(artists[favoritePosition]);
-  localStorage.setItem("favoriteArtists", favoriteArtists);
-  console.log("Local storage:", localStorage.favoriteArtists);
+  console.log(body);
+
+  if (localStorage.getItem("favorites") == null) {
+    favoriteArtists.push(body);
+    localStorage.setItem("favorites", JSON.stringify(favoriteArtists));
+    favBtn.classList.add("favorited");
+  } else {
+    // Check if the artist ID exists in the favoriteArtists array
+    const artistExists = favoriteArtists.some((favoriteArtist) => favoriteArtist.id === artistToFavorite.id);
+
+    let retString = localStorage.getItem("favorites");
+    let retArray = JSON.parse(retString);
+    favoriteArtists = retArray;
+    if (!artistExists) {
+      favoriteArtists.push(body);
+      localStorage.setItem("favorites", JSON.stringify(favoriteArtists));
+      favBtn.classList.add("favorited");
+    } else if (artistExists) {
+      // console.log("Cannot add because artist is already favorited");
+      favBtn.classList.remove("favorited");
+      favoritePosition = favoriteArtists.indexOf(artistToFavorite);
+      favoriteArtists.splice(favoritePosition, 1);
+      localStorage.setItem("favorites", JSON.stringify(favoriteArtists));
+    }
+  }
 }
 
 function editArtistDialog(artist) {

@@ -7,7 +7,7 @@
     "genres": ["Progressive Metal", "Alternative Metal"],
     "labels": ["Volcano Entertainment", "Tool Dissectional"],
     "website": "https://www.toolband.com/",
-    "image": "../img/tool.jpg",
+    "image": "../backend/img/tool.jpg",
     "shortDescription": "Tool is a progressive metal band known for their intricate music, philosophical lyrics, and captivating visuals."
   },
   {
@@ -17,7 +17,7 @@
     "genres": "Progressive Metal,Rock,Electronic",
     "labels": "Spinefarm Records,Church of Sleep",
     "website": "https://www.sleep-token.com/",
-    "image": "https://example.com/sleep-token-image.jpg",
+    "image": "../backend/img/sleeptoken.jpg",
     "shortDescription": "Sleep Token is a British musical project known for its enigmatic persona, blending progressive metal, rock, and electronic music.",
     "id": "435345"
   }
