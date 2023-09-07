@@ -16,19 +16,16 @@
 
     <div id="createArtistDiv"><button id="btn-createArtist">Create New</button></div>
 
-    <div id="filterSort">
-      <div id="sort">
-        <h3>Sort by:</h3>
-        <button id="btn-sortName" type="button">Name</button>
-        <button id="btn-sortActiveSince" type="button">Active Since</button>
+    
+      <div id="filterSort">
+        <button id="btn-filterFavorites" type="button">Favorites</button>
+        <button id="btn-filterAll" type="button">All</button>
+        <select id="select-sort" style="height: 3em;">
+          <option value="activeSince">Active Since</option>
+          <option value="genres">Genres</option>
+          <option value="name">Name</option>
+        </select>
       </div>
-      <div id="filters">
-        <h3>Filter by:</h3>
-        <button id="btn-sortFavorites" type="button">Favorites</button>
-        <button id="btn-sortName" type="button">Name</button>
-        <button id="btn-sortActiveSince" type="button">Active Since</button>
-      </div>
-  </div>
 
     <dialog id="dialog-createArtist">
       <form id="form-createArtist">

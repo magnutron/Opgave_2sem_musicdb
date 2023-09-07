@@ -1,29 +1,47 @@
 "use strict";
 window.addEventListener("load", initApp);
-///////////////////////////
-/// Set JSON URL here ////
-/////////////////////////
+
 const endpoint = "http://localhost:3000/artists";
+
 let artists;
 let selectedArtist;
 let favoriteArtists;
 let savedFavorites = JSON.parse(localStorage.getItem("favorites"));
+let sortedArtists;
+let sortValue;
 
 if (savedFavorites) {
   favoriteArtists = savedFavorites;
 } else {
   favoriteArtists = [];
 }
-////////////////////////
-/// Initialize App  ///
-//////////////////////
-
-document.querySelector("#btn-createArtist").addEventListener("click", createArtistDialog);
 
 function initApp() {
   console.log("Frontend loaded");
+  document.querySelector("#btn-createArtist").addEventListener("click", createArtistDialog);
+  document.querySelector("#select-sort").addEventListener("change", (event) => sortBy(event.target.value));
+  // document.querySelector("#btn-filterFavorites").addEventListener("click", filterByFavorites);
+  document.querySelector("#btn-filterAll").addEventListener("click", refreshArtists);
   refreshArtists();
 }
+
+function sortBy(sortValue) {
+  sortedArtists = artists.sort((a, b) => a[sortValue].localeCompare(b[sortValue]));
+  document.querySelector("#artists").innerHTML = "";
+  for (const sortedArtist of sortedArtists) {
+    listArtist(sortedArtist);
+  }
+}
+
+// function filterByFavorites() {
+//   console.log(savedFavorites);
+//   console.log(artists);
+
+//   // document.querySelector("#artists").innerHTML = "";
+//   // for (const savedArtist of savedFavorites) {
+//   //   listArtist(savedFavorites);
+//   // }
+// }
 
 async function refreshArtists() {
   console.log("Updating grid");
