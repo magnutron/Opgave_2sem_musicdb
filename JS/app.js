@@ -20,28 +20,10 @@ function initApp() {
   console.log("Frontend loaded");
   document.querySelector("#btn-createArtist").addEventListener("click", createArtistDialog);
   document.querySelector("#select-sort").addEventListener("change", (event) => sortBy(event.target.value));
-  // document.querySelector("#btn-filterFavorites").addEventListener("click", filterByFavorites);
+  document.querySelector("#btn-filterFavorites").addEventListener("click", filterByFavorites);
   document.querySelector("#btn-filterAll").addEventListener("click", refreshArtists);
   refreshArtists();
 }
-
-function sortBy(sortValue) {
-  sortedArtists = artists.sort((a, b) => a[sortValue].localeCompare(b[sortValue]));
-  document.querySelector("#artists").innerHTML = "";
-  for (const sortedArtist of sortedArtists) {
-    listArtist(sortedArtist);
-  }
-}
-
-// function filterByFavorites() {
-//   console.log(savedFavorites);
-//   console.log(artists);
-
-//   // document.querySelector("#artists").innerHTML = "";
-//   // for (const savedArtist of savedFavorites) {
-//   //   listArtist(savedFavorites);
-//   // }
-// }
 
 async function refreshArtists() {
   console.log("Updating grid");
@@ -52,6 +34,31 @@ async function refreshArtists() {
     listArtist(artist);
   }
 }
+
+function sortBy(sortValue) {
+  sortedArtists = artists.sort((a, b) => a[sortValue].localeCompare(b[sortValue]));
+  document.querySelector("#artists").innerHTML = "";
+  for (const sortedArtist of sortedArtists) {
+    listArtist(sortedArtist);
+  }
+}
+
+function filterByFavorites() {
+  favoriteArtists = JSON.parse(localStorage.getItem("favorites"));
+  console.log(savedFavorites);
+  console.log(favoriteArtists);
+  console.log(artists);
+
+  artists = artists.filter(artist => favoriteArtists.some(sortedItem => sortedItem.id === artist.id));
+
+  document.querySelector("#artists").innerHTML = "";
+
+  for (const artist of artists) {
+
+    listArtist(artist);
+  }
+}
+
 
 async function getArtists(url) {
   const response = await fetch(url);
