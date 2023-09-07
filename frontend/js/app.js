@@ -1,7 +1,7 @@
 "use strict";
 window.addEventListener("load", initApp);
 
-const endpoint = "http://localhost:3000/artists";
+import { getArtists, updateArtistRequest, createArtist, deleteArtist } from "./rest.js";
 
 let artists;
 let selectedArtist;
@@ -28,7 +28,7 @@ function initApp() {
 async function refreshArtists() {
   console.log("Updating grid");
   document.querySelector("#artists").innerHTML = "";
-  artists = await getArtists(endpoint);
+  artists = await getArtists();
 
   for (const artist of artists) {
     listArtist(artist);
@@ -57,13 +57,6 @@ function filterByFavorites() {
 
     listArtist(artist);
   }
-}
-
-
-async function getArtists(url) {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
 }
 
 function listArtist(artist) {
@@ -175,38 +168,15 @@ async function updateArtistClicked(event) {
 
   updateArtistRequest(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
 
-  async function updateArtistRequest(name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
-    // Opdaterer objekt med opdateret artistinfo
-    const artistToUpdate = {
-      name,
-      birthdate,
-      activeSince,
-      genres,
-      labels,
-      website,
-      image,
-      shortDescription,
-    };
-    const json = JSON.stringify(artistToUpdate);
+  const response = updateArtistRequest(name, birthdate, activeSince, genres, labels, website, image, shortDescription)
 
-    const response = await fetch(`${endpoint}/${selectedArtist.id}`, {
-      method: "PUT",
-      body: json,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    // Tjekker hvis response er okay, hvis response er succesfuld ->
     if (response.ok) {
-      // Opdater MoviesGrid til at displaye all film og den nye film
       console.log("Artist updated");
       refreshArtists();
       form.reset();
       closeDialog();
     }
   }
-}
 
 function createArtistDialog() {
   const createDialog = document.querySelector("#dialog-createArtist");
@@ -247,18 +217,6 @@ async function createArtistClicked(event) {
   }
 }
 
-async function createArtist(newArtist) {
-  const json = JSON.stringify(newArtist);
-
-  const response = await fetch(`${endpoint}`, {
-    method: "POST",
-    body: json,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-}
-
 function deleteArtistDialog(id) {
   const deleteDialog = document.querySelector("#dialog-deleteArtist");
   deleteDialog.showModal();
@@ -266,12 +224,4 @@ function deleteArtistDialog(id) {
 
   document.querySelector("#form-deleteArtist").addEventListener("submit", () => deleteArtist(id));
   document.querySelector("#btn-deleteDecline").addEventListener("click", () => closeDialog(deleteDialog));
-}
-
-async function deleteArtist(id) {
-  const response = await fetch(`${endpoint}/${id}`, {
-    method: "DELETE",
-  });
-
-  return response;
 }

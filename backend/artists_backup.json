@@ -1,0 +1,68 @@
+[
+  {
+    "id": "2332432234",
+    "name": "Tool",
+    "birthdate": "January 2, 1990",
+    "activeSince": "1990",
+    "genres": ["Progressive Metal", "Alternative Metal"],
+    "labels": ["Volcano Entertainment", "Tool Dissectional"],
+    "website": "https://www.toolband.com/",
+    "image": "../backend/img/tool.jpg",
+    "shortDescription": "Tool is a progressive metal band known for their intricate music, philosophical lyrics, and captivating visuals."
+  },
+  {
+    "name": "Sleep Token",
+    "birthdate": "Unknown",
+    "activeSince": "2015",
+    "genres": "Progressive Metal,Rock,Electronic",
+    "labels": "Spinefarm Records,Church of Sleep",
+    "website": "https://www.sleep-token.com/",
+    "image": "../backend/img/sleeptoken.jpg",
+    "shortDescription": "Sleep Token is a British musical project known for its enigmatic persona, blending progressive metal, rock, and electronic music.",
+    "id": "435345"
+  },
+  {
+    "name": "Fall Out Boy",
+    "birthdate": "February 4, 2001",
+    "activeSince": "2001",
+    "genres": ["Pop punk", "Pop rock", "Emo", "Punk rock"],
+    "labels": ["Island Records", "DCD2", "Fueled by Ramen"],
+    "website": "https://falloutboy.com/",
+    "image": "../backend/img/falloutboy.jpg",
+    "shortDescription": "Fall Out Boy is an American rock band known for their energetic performances and hits like 'Sugar, We're Goin Down' and 'Thnks fr th Mmrs.' They have been a prominent figure in the pop punk and emo scene.",
+    "id": "755453345"
+  },
+  {
+    "name": "Lindsey Stirling",
+    "birthdate": "September 21, 1986",
+    "activeSince": "2007",
+    "genres": ["Electronic", "Classical crossover", "Dubstep", "Pop"],
+    "labels": ["Lindseystomp", "Concord Music Group"],
+    "website": "https://www.lindseystirling.com/",
+    "image": "../backend/img/lindseystirling.jpg",
+    "shortDescription": "Lindsey Stirling is an American violinist, dancer, and composer known for her unique blend of electronic dance music and classical violin. She gained fame through her YouTube channel and has since become a successful artist, known for her energetic performances and music videos.",
+    "id": "455453345"
+  },
+  {
+    "id": "c6b59f61-efb0-4d22-8a61-2b655b96a354",
+    "name": "Linkin Park",
+    "birthdate": "1996",
+    "activeSince": "1996",
+    "genres": ["Alternative rock", "Nu metal", "Rap rock", "Alternative metal"],
+    "labels": ["Warner Records", "Machine Shop Recordings"],
+    "website": "https://www.linkinpark.com/",
+    "image": "../backend/img/linkinpark.jpg",
+    "shortDescription": "Linkin Park is an American rock band known for their fusion of rock, rap, and electronic music. They rose to fame with their debut album 'Hybrid Theory' and have since become one of the most influential bands in modern rock music."
+  },
+  {
+    "id": "your-daft-punk-id",
+    "name": "Daft Punk",
+    "birthdate": "1993",
+    "activeSince": "1993",
+    "genres": ["Electronic", "House", "Techno"],
+    "labels": ["Daft Life", "Virgin Records"],
+    "website": "https://www.daftpunk.com/",
+    "image": "../backend/img/daftpunk.jpg",
+    "shortDescription": "Daft Punk is a French electronic music duo consisting of Thomas Bangalter and Guy-Manuel de Homem-Christo. They are known for their iconic helmets and pioneering electronic music. Daft Punk has had a significant influence on the electronic and dance music genres."
+  }  
+]
